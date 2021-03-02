@@ -18,6 +18,17 @@ func IsAllCharsUniqA(s string) bool {
 	return true
 }
 
+func IsAllCharsUniqA_1(s string) bool {
+	m := make(map[rune]int)
+	for _, v := range s {
+		m[v]++
+		if m[v] > 1 {
+			return false
+		}
+	}
+	return true
+}
+
 // IsAllCharsUniqB gives the same result as IsAllCharsUniqA but without using extra data structs
 func IsAllCharsUniqB(s string) bool {
 	for _, v := range s {

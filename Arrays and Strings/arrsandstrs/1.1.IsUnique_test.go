@@ -38,6 +38,16 @@ func Test_isAllCharsUniqA(t *testing.T) {
 	}
 }
 
+func Test_isAllCharsUniqA_1(t *testing.T) {
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := IsAllCharsUniqA_1(tt.args.s); got != tt.want {
+				t.Errorf("isAllCharsUniq() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
 func Test_isAllCharsUniqB(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
