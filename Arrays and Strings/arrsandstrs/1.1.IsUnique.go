@@ -18,7 +18,7 @@ func IsAllCharsUniqA(s string) bool {
 	return true
 }
 
-// IsAllCharsUniqB gives the same result as IsAllCharsUniqA but without extra data structs
+// IsAllCharsUniqB gives the same result as IsAllCharsUniqA but without using extra data structs
 func IsAllCharsUniqB(s string) bool {
 	for _, v := range s {
 		ix := strings.Index(s, string(v))

@@ -15,7 +15,7 @@ func Urlify(s string) string {
 
 	ix := index(rs, ' ')
 	for ix > -1 {
-		copy(rs[ix+2:], rs[ix:])
+		copy(rs[ix+2:], rs[ix:]) // shift
 
 		rs[ix] = '%'
 		rs[ix+1] = '2'

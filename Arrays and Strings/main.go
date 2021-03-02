@@ -13,4 +13,7 @@ func main() {
 
 	println(Urlify(" "))              // "%20"
 	println(Urlify(" côtier côtier")) // "%20côtier%20côtier"
+
+	println(IsPalindPermute("Tact Coa")) // true
+	println(IsPalindPermute("zxcvbn"))   // false
 }
