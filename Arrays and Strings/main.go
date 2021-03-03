@@ -2,6 +2,7 @@ package main
 
 import (
 	. "aas/arrsandstrs"
+	"fmt"
 )
 
 func main() {
@@ -22,4 +23,7 @@ func main() {
 
 	println(CompressString("zxcv"))        // zxcv
 	println(CompressString("aabcccccaaa")) // a2b1c5a3
+
+	fmt.Println(RotateMatrix([][]int{{123}}))              // [[123]]
+	fmt.Println(RotateMatrix([][]int{{12, 34}, {56, 78}})) // [[56 12] [78 34]]
 }
