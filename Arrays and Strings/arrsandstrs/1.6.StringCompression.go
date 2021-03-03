@@ -1,38 +1,46 @@
 package arrsandstrs
 
 import (
-	"fmt"
 	"strconv"
 )
 
 // The string has only "a-zA-Z"
 func CompressString(s string) string {
 	n := strLen(s)
-	rs := make([]rune, 0, n)
+	if n == 0 {
+		return ""
+	}
+	res := make([]rune, 0, n)
 
-	var c int
-	var prev rune
-	for i, cur := range s {
+	c := 1
+	rr := []rune(s)
+	var prev, cur rune
+	for i := 0; i <= n; i++ {
 		if i == 0 {
+			prev = 0
+			cur = rr[i]
+		}
+		if i > 0 && i < n {
 			prev = cur
-			c++
-			continue
+			cur = rr[i]
+		}
+		if i == n {
+			prev = cur
+			cur = 0
 		}
 		if prev == cur {
 			c++
 		}
 		if prev != cur {
-			rs = append(rs, prev)
-			rs = append(rs, []rune(strconv.Itoa(c))...)
-			c = 1
+			if i > 0 {
+				res = append(res, prev)
+				res = append(res, []rune(strconv.Itoa(c))...)
+				c = 1
+			}
 		}
-		prev = cur
 	}
-
-	fmt.Println(string(rs))
-
-	if len(rs) >= n {
+	if len(res) >= n {
 		return s
 	}
-	return string(rs)
+	return string(res)
 }
