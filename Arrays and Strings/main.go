@@ -26,4 +26,10 @@ func main() {
 
 	fmt.Println(RotateMatrix([][]int{{123}}))              // [[123]]
 	fmt.Println(RotateMatrix([][]int{{12, 34}, {56, 78}})) // [[56 12] [78 34]]
+
+	// fmt.Println(RotateMatrixInPlace([][]int{{12, 34}, {56, 78}})) // [[56 12] [78 34]]
+	// fmt.Println(RotateMatrixInPlace([][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}})) // [[7 4 1] [8 5 2] [9 6 3]]
+
+	fmt.Println(ZeroMatrix([][]int{{123}}))             // [[123]]
+	fmt.Println(ZeroMatrix([][]int{{1, 0}, {3, 4}})) // [[56 12] [78 34]]
 }

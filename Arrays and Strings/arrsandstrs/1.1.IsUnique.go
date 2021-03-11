@@ -6,7 +6,7 @@ import (
 
 // IsAllCharsUniqA implements an algorithm to determine if a string has all unique characters.
 func IsAllCharsUniqA(s string) bool {
-	m := make(map[rune]int)
+	m := make(map[rune]int, strLen(s))
 	for _, v := range s {
 		m[v]++
 	}
@@ -19,7 +19,7 @@ func IsAllCharsUniqA(s string) bool {
 }
 
 func IsAllCharsUniqA_1(s string) bool {
-	m := make(map[rune]int)
+	m := make(map[rune]int, strLen(s))
 	for _, v := range s {
 		m[v]++
 		if m[v] > 1 {
